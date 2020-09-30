@@ -23,7 +23,6 @@ namespace TextConverter.TextConvertion
 
             foreach (Sentence sentence in sentences)
             {
-
                 List<Word> words = sentence.Words.ToList();
                 words.Sort((x, y) => String.Compare(x.Text, y.Text, true, new CultureInfo("en-US")));
 
@@ -35,7 +34,6 @@ namespace TextConverter.TextConvertion
                 }
 
                 sentence.Words = words;
-
             }
 
             return textToSort;
