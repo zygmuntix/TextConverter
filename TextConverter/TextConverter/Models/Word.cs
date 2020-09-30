@@ -1,4 +1,4 @@
-﻿namespace TextConverter_Nordea.Models
+﻿namespace TextConverter.Models
 {
     public class Word
     {
