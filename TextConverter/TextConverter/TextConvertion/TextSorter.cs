@@ -9,14 +9,14 @@ namespace TextConverter.TextConvertion
     /// TextSorter is class for sorting Text object.
     /// It sorts Words in Text in American alphabetical order.
     /// </summary>
-    public class TextSorter
+    public class TextSorter : ITextSorter
     {
         /// <summary>
         /// Sorts Words in Text in American alphabet order.
         /// </summary>
         /// <param name="textToSort">Text to sort</param>
         /// <returns>Sorted Text</returns>
-        public Text Sort( Text textToSort )
+        public Text Sort(Text textToSort)
         {
             IList<Sentence> sentences = textToSort.Sentences;
             foreach (Sentence sentence in sentences)

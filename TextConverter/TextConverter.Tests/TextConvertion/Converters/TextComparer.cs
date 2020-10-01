@@ -34,7 +34,6 @@ namespace TextConverter.Tests.TextConvertion.Converters
                 int wordI = 0;
                 foreach (Word wordSentence1 in sentenceText1.Words)
                 {
-
                     Word wordSentence2 = sentenceText2.Words[wordI];
 
                     if (!wordSentence1.Text.Equals(wordSentence2.Text) ||
@@ -44,11 +43,9 @@ namespace TextConverter.Tests.TextConvertion.Converters
                     }
 
                     wordI++;
-
                 }
 
                 sentenceI++;
-
             }
 
             return true;

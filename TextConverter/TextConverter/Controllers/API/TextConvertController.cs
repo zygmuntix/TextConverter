@@ -12,6 +12,15 @@ namespace TextConverter_Nordea.Controllers.API
     [Route("api/[controller]")]
     public class TextConvertController : ControllerBase
     {
+        private ITextFactory textFactory;
+        private ITextSorter textSorter;
+
+        public TextConvertController(ITextFactory textFactory, ITextSorter textSorter)
+        {
+            this.textFactory = textFactory;
+            this.textSorter = textSorter;
+        }
+
         /// <summary>
         /// Url for API: POST /api/textconvert
         /// Modifies text and converts it into format specified
@@ -28,10 +37,7 @@ namespace TextConverter_Nordea.Controllers.API
             }
             
             // First modify Text by parsing and sorting it.
-            TextParser textParser = new TextParser(textToConvert);
-            Text parsedText = textParser.ParseToTextObject();
-
-            TextSorter textSorter = new TextSorter();
+            Text parsedText = textFactory.CreateText(textToConvert);
             Text sortedText = textSorter.Sort(parsedText);
 
             // Convert Text into appropiate format.

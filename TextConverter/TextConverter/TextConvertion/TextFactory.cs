@@ -6,27 +6,18 @@ using TextConverter.Models;
 namespace TextConverter.TextConvertion
 {
     /// <summary>
-    /// TextParser is class that converts string
-    /// into Text object with Sentences containing Words.
+    /// TextFactory is class that creates Text object
+    /// with Sentences containing Words from string.
     /// </summary>
-    public class TextParser
+    public class TextFactory : ITextFactory
     {
         #region Operations
 
         /// <summary>
-        /// Creates new TextParser instance.
-        /// </summary>
-        /// <param name="textToParse">String to be converted into Text object</param>
-        public TextParser(string textToParse)
-        {
-            this.textToParse = textToParse;
-        }
-
-        /// <summary>
-        /// Parses string to Text object.
+        /// Creates Text object from string.
         /// </summary>
         /// <returns>Parsed Text object</returns>
-        public Text ParseToTextObject()
+        public Text CreateText(string textToParse)
         {
             if (textToParse == null)
             {
@@ -88,12 +79,6 @@ namespace TextConverter.TextConvertion
 
             return textResult;
         }
-
-        #endregion
-
-        #region Data Members
-
-        private readonly string textToParse;
 
         #endregion
     }

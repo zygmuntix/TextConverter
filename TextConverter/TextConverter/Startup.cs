@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TextConverter.TextConvertion;
 
 namespace TextConverter
 {
@@ -19,6 +20,8 @@ namespace TextConverter
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSingleton<ITextFactory, TextFactory>();
+            services.AddSingleton<ITextSorter, TextSorter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -16,8 +16,8 @@ namespace TextConverter.Tests.TextConvertion
         {
             Text expectedText = CreateExpectedText();
 
-            TextParser textParser = new TextParser(TextToParse);
-            Text actualText = textParser.ParseToTextObject();
+            TextFactory textParser = new TextFactory();
+            Text actualText = textParser.CreateText(TextToParse);
 
             Assert.IsTrue(TextComparer.CompareTexts(expectedText, actualText));
         }
