@@ -15,7 +15,6 @@ namespace TextConverter.TextConvertion.Converters
             int numberOfColumns = CalculateNumberOfColumns(text);
 
             StringBuilder csvStringBuilder = new StringBuilder("");
-
             for (int i = 1; i < numberOfColumns; i++)
             {
                 csvStringBuilder.Append("Word " + i + ", ");

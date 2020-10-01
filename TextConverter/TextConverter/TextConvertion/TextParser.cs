@@ -77,8 +77,6 @@ namespace TextConverter.TextConvertion
                     ).ToArray());
 
                     Word word = new Word { Id = wordId, Text = trimmedWord };
-
-                    //sentence.Id = sentenceNr;
                     sentence.Words.Add(word);
 
                     wordId++;

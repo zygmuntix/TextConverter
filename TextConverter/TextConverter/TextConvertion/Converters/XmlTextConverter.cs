@@ -51,12 +51,10 @@ namespace TextConverter.TextConvertion.Converters
 
                 foreach (Word word in sentence.Words)
                 {
-
                     XmlNode wordNode = doc.CreateElement("word");
                     wordNode.InnerText = word.Text;
 
                     sentenceNode.AppendChild(wordNode);
-
                 }
             }
             return doc;
