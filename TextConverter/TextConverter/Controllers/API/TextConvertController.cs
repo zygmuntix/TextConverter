@@ -5,7 +5,6 @@ using TextConverter.TextConvertion.Converters;
 
 namespace TextConverter_Nordea.Controllers.API
 {
-
     /// <summary>
     /// ApiController used for Text convertions.
     /// </summary>
