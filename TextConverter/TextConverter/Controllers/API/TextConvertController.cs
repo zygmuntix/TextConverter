@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TextConverter.Models;
 using TextConverter.TextConvertion;
 using TextConverter.TextConvertion.Converters;
@@ -14,13 +13,6 @@ namespace TextConverter_Nordea.Controllers.API
     [Route("api/[controller]")]
     public class TextConvertController : ControllerBase
     {
-        private IWebHostEnvironment _env;
-
-        public TextConvertController(IWebHostEnvironment env)
-        {
-            _env = env;
-        }
-
         /// <summary>
         /// Url for API: POST /api/textconvert
         /// Modifies text and converts it into format specified
