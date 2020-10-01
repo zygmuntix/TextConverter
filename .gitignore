@@ -1,3 +1,5 @@
 TextConverter/.vs
 TextConverter/TextConverter/bin
 TextConverter/TextConverter/obj
+TextConverter/TextConverter.Tests/bin
+TextConverter/TextConverter.Tests/obj
