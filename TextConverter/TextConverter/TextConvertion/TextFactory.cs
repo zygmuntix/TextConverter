@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Text.RegularExpressions;
 using TextConverter.Models;
 
@@ -44,8 +43,8 @@ namespace TextConverter.TextConvertion
             int sentenceNr = 1;
             foreach (string sentenceText in sentences)
             {
-                // Replace all occurences of such elements with space: , ; : " ' -
-                string trimmedSentence = Regex.Replace(sentenceText, @"[,|;|:|""|'|-]", " ");
+                // Replace all occurences of such elements with space: , ; : -
+                string trimmedSentence = Regex.Replace(sentenceText, @"[,|;|:|-]", " ");
 
                 // Remove all whitespaces from beginning and end of the sentence text.
                 trimmedSentence = trimmedSentence.Trim();
@@ -61,13 +60,7 @@ namespace TextConverter.TextConvertion
                 int wordId = 1;
                 foreach (string wordText in sentenceWords)
                 {
-                    // Remove all elements in word, that are not letters or digits.
-                    string trimmedWord = new string((from c in wordText
-                        where char.IsLetterOrDigit(c)
-                        select c
-                    ).ToArray());
-
-                    Word word = new Word { Id = wordId, Text = trimmedWord };
+                    Word word = new Word { Id = wordId, Text = wordText };
                     sentence.Words.Add(word);
 
                     wordId++;

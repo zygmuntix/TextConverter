@@ -7,7 +7,7 @@ using TextConverter.TextConvertion;
 namespace TextConverter.Tests.TextConvertion
 {
     [TestClass]
-    public class TextParserTests
+    public class TextFactoryTests
     {
         public const string TextToParse = @"Ala..Kot?:Pies,gepard;To jest zwierzę:""lis"".'Łasica'.";
 
@@ -65,7 +65,7 @@ namespace TextConverter.Tests.TextConvertion
                 new Word { Id = 3, Text = "To"},
                 new Word { Id = 4, Text = "jest"},
                 new Word { Id = 5, Text = "zwierzę"},
-                new Word { Id = 6, Text = "lis"}
+                new Word { Id = 6, Text = @"""lis"""}
             };
             Sentence sentence4 = new Sentence
             {
@@ -75,7 +75,7 @@ namespace TextConverter.Tests.TextConvertion
 
             List<Word> wordsForSentence5 = new List<Word>
             {
-                new Word { Id = 1, Text = "Łasica"}
+                new Word { Id = 1, Text = @"'Łasica'"}
             };
             Sentence sentence5 = new Sentence
             {

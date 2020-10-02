@@ -10,15 +10,18 @@
     <div id="converter" class=" col-sm-4">
         <h2>Text to convert</h2>
 
-        @using (Html.BeginForm())
-        {
+        <form asp-controller="Demo" asp-action="Register" method="post">
+            <!-- Input and Submit elements -->
+        </form>
+
+        <form asp-controller="Home" asp-action="Index" method="post">
             <br />
-            @Html.TextAreaFor(m => m.TextToConvert, new { rows = "10", cols = "40" })
-            @Html.HiddenFor(m => m.Id)
+            <textarea asp-for="TextToConvert" rows="10" cols="40"></textarea>
+            <input asp-for="Id" />
             <br />
             <button type="button" class="btn btn-primary convert-xml">Convert to XML</button>
             <button type="button" class="btn btn-primary convert-csv">Convert to CSV</button>
-        }
+        </form>
 
     </div>
     <div id="xml-downloader" class="col-sm-4">

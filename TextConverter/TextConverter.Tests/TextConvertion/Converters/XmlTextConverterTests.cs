@@ -1,26 +1,42 @@
-﻿using System.IO;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TextConverter.Models;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using TextConverter.TextConvertion;
 using TextConverter.TextConvertion.Converters;
 
 namespace TextConverter.Tests.TextConvertion.Converters
 {
     [TestClass]
-    public class XmlTextConverterTest
+    public class XmlTextConverterTests : TextConverterTests
     {
-        [TestMethod]
-        [DeploymentItem("TestData/ConvertTextToXml.xml")]
-        public void ConvertTextToXmlTest()
+        [ClassInitialize]
+        public static void ClassInit(TestContext testContext)
         {
-            Text textToConvert = SampleTextGenerator.CreateTextToConvert();
-            string expectedXmlString = File.ReadAllText("ConvertTextToXml.xml");
-
-            XmlTextConverter xmlTextConverter = new XmlTextConverter();
-            string actualCsvString = xmlTextConverter.ConvertText(textToConvert);
-
-            Assert.AreEqual(expectedXmlString, actualCsvString);
+            textFactory = new TextFactory();
+            textSorter = new TextSorter();
+            textConverter = new XmlTextConverter();
         }
 
-        public TestContext TestContext { get; set; }
+        [TestMethod]
+        [DeploymentItem("TestData/ConvertText/SimpleTest.xml")]
+        [DeploymentItem("TestData/ConvertText/SimpleTest.txt")]
+        public void ConvertTextToXmlSimpleTest()
+        {
+            ConvertTextTestCommon("SimpleTest.txt", "SimpleTest.xml");
+        }
+
+        [TestMethod]
+        [DeploymentItem("TestData/ConvertText/SimpleTest.xml")]
+        [DeploymentItem("TestData/ConvertText/SimpleTestWhitespace.txt")]
+        public void ConvertTextToXmlSimpleTestWhitespace()
+        {
+            ConvertTextTestCommon("SimpleTestWhitespace.txt", "SimpleTest.xml");
+        }
+
+        [TestMethod]
+        [DeploymentItem("TestData/ConvertText/LongTest.xml")]
+        [DeploymentItem("TestData/ConvertText/LongTest.txt")]
+        public void ConvertTextToXmlLongTest()
+        {
+            ConvertTextTestCommon("LongTest.txt", "LongTest.xml");
+        }
     }
 }

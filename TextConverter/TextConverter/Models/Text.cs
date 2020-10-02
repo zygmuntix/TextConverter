@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace TextConverter.Models
 {
     public class Text
     {
+        [HiddenInput]
         public int Id { get; set; }
 
         public string TextToConvert { get; set; }

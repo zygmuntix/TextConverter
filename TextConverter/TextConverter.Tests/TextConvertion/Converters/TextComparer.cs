@@ -22,7 +22,6 @@ namespace TextConverter.Tests.TextConvertion.Converters
             int sentenceI = 0;
             foreach (Sentence sentenceText1 in text1.Sentences)
             {
-
                 Sentence sentenceText2 = text2.Sentences[sentenceI];
 
                 if (sentenceText1.Words.Count != sentenceText2.Words.Count ||
