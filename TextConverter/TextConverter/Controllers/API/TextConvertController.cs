@@ -35,7 +35,7 @@ namespace TextConverter_Nordea.Controllers.API
             {
                 return string.Empty;
             }
-            
+
             // First modify Text by parsing and sorting it.
             Text parsedText = textFactory.CreateText(textToConvert);
             Text sortedText = textSorter.Sort(parsedText);

@@ -37,7 +37,7 @@ namespace TextConverter.TextConvertion
             trimmedText = trimmedText.Trim('.', '?', '!');
 
             // Split text into Sentences by using '.', '?' and '!' as delimiters.
-            char[] sentenceSeparators = new char[] {'.', '?', '!'};
+            char[] sentenceSeparators = new char[] { '.', '?', '!' };
             string[] sentences = trimmedText.Split(sentenceSeparators);
 
             int sentenceNr = 1;
@@ -55,7 +55,7 @@ namespace TextConverter.TextConvertion
                 // Split sentence into words using all possible whitespaces as delimiters.
                 string[] sentenceWords = trimmedSentence.Split(null);
 
-                Sentence sentence = new Sentence {Id = sentenceNr, Words = new List<Word>()};
+                Sentence sentence = new Sentence { Id = sentenceNr, Words = new List<Word>() };
 
                 int wordId = 1;
                 foreach (string wordText in sentenceWords)

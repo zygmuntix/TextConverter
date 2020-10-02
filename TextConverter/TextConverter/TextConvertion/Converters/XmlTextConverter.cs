@@ -6,7 +6,7 @@ using TextConverter.Models;
 
 namespace TextConverter.TextConvertion.Converters
 {
-    public class XmlTextConverter: ITextConverter
+    public class XmlTextConverter : ITextConverter
     {
         /// <summary>
         /// Converts Text into xml string.

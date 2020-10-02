@@ -3,7 +3,7 @@ using TextConverter.Models;
 
 namespace TextConverter.TextConvertion.Converters
 {
-    public class CsvTextConverter: ITextConverter
+    public class CsvTextConverter : ITextConverter
     {
         /// <summary>
         /// Converts Text into Csv string.

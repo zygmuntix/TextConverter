@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using TextConverter.Models;
 using TextConverter.Tests.TextConvertion.Converters;
 using TextConverter.TextConvertion;
